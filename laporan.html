@@ -98,93 +98,7 @@
           totalPemasukan += pemasukan;
         } else {
           pengeluaran = jumlah;
-          totalPengeluaran += pengeluaran; // Fungsi untuk menampilkan data keuangan dalam tabel
-          function renderDataKeuangan() {
-            const tbody = document.getElementById("dataKeuangan");
-            tbody.innerHTML = "";
-
-            dataKeuangan.forEach((data) => {
-              const row = `<tr>
-            <td>${data.tanggal}</td>
-            <td>${data.keterangan}</td>
-            <td>${data.pemasukan}</td>
-            <td>${data.pengeluaran}</td>
-            <td>${data.saldo}</td>
-        </tr>`;
-              tbody.innerHTML += row;
-            });
-          }
-
-          // Fungsi untuk menghapus semua transaksi
-          function hapusSemuaTransaksi() {
-            totalPemasukan = 0;
-            totalPengeluaran = 0;
-            dataKeuangan.length = 0; // Hapus array
-            renderDataKeuangan();
-            updateTotals();
-          }
-
-          // Fungsi untuk menghapus transaksi terakhir
-          function hapusBarisTerakhir() {
-            if (dataKeuangan.length > 0) {
-              const lastTransaction = dataKeuangan.pop();
-              totalPemasukan -= lastTransaction.pemasukan;
-              totalPengeluaran -= lastTransaction.pengeluaran;
-              renderDataKeuangan();
-              updateTotals();
-            } else {
-              alert("Tidak ada transaksi untuk dihapus.");
-            }
-          }
-
-          // Fungsi untuk menghasilkan PDF
-          function simpanPDF() {
-            const doc = new jsPDF();
-            doc.text("Laporan Keuangan Harian", 14, 16);
-            doc.text(`Pemasukan: Rp ${totalPemasukan}`, 14, 30);
-            doc.text(`Pengeluaran: Rp ${totalPengeluaran}`, 14, 40);
-            doc.text(`Saldo Akhir: Rp ${totalPemasukan - totalPengeluaran}`, 14, 50);
-
-            let y = 70;
-            dataKeuangan.forEach((data) => {
-              doc.text(`${data.tanggal} - ${data.keterangan} - Pemasukan: Rp ${data.pemasukan} - Pengeluaran: Rp ${data.pengeluaran} - Saldo: Rp ${data.saldo}`, 14, y);
-              y += 10;
-            });
-
-            doc.save("laporan_keuangan_harian.pdf");
-          }
-
-          // Lampirkan fungsi ke tombol
-          document.querySelector(".btn-success").onclick = tambahTransaksi;
-          document.querySelector(".btn-danger").onclick = hapusSemuaTransaksi;
-          document.querySelector(".btn-warning").onclick = hapusBarisTerakhir;
-          document.querySelector(".btn-primary").onclick = simpanPDF;
-
-          // Fungsi untuk menghasilkan PDF
-          function simpanPDF() {
-            const { jsPDF } = window.jspdf; // Mengambil jsPDF dari window
-            const doc = new jsPDF(); // Membuat instance baru dari jsPDF
-
-            // Menambahkan judul
-            doc.setFontSize(18);
-            doc.text("Laporan Keuangan Harian", 14, 16);
-
-            // Menambahkan total pemasukan, pengeluaran, dan saldo
-            doc.setFontSize(12);
-            doc.text(`Pemasukan: Rp ${totalPemasukan}`, 14, 30);
-            doc.text(`Pengeluaran: Rp ${totalPengeluaran}`, 14, 40);
-            doc.text(`Saldo Akhir: Rp ${totalPemasukan - totalPengeluaran}`, 14, 50);
-
-            // Menambahkan data transaksi
-            let y = 70; // Posisi Y untuk menulis data transaksi
-            dataKeuangan.forEach((data) => {
-              doc.text(`${data.tanggal} - ${data.keterangan} - Pemasukan: Rp ${data.pemasukan} - Pengeluaran: Rp ${data.pengeluaran} - Saldo: Rp ${data.saldo}`, 14, y);
-              y += 10; // Menambah jarak antar baris
-            });
-
-            // Menyimpan PDF dengan nama file
-            doc.save("laporan_keuangan_harian.pdf");
-          }
+          totalPengeluaran += pengeluaran;
         }
 
         const saldo = totalPemasukan - totalPengeluaran;
@@ -192,6 +106,94 @@
 
         renderDataKeuangan();
         updateTotals();
+      }
+
+      // Fungsi untuk menampilkan data keuangan dalam tabel
+      function renderDataKeuangan() {
+        const tbody = document.getElementById("dataKeuangan");
+        tbody.innerHTML = "";
+
+        dataKeuangan.forEach((data) => {
+          const row = `<tr>
+            <td>${data.tanggal}</td>
+            <td>${data.keterangan}</td>
+            <td>${data.pemasukan}</td>
+            <td>${data.pengeluaran}</td>
+            <td>${data.saldo}</td>
+        </tr>`;
+          tbody.innerHTML += row;
+        });
+      }
+
+      // Fungsi menghapus semua data keuangan
+      function hapusSemuaTransaksi() {
+        totalPemasukan = 0;
+        totalPengeluaran = 0;
+        dataKeuangan.length = 0; // Clear array
+        renderDataKeuangan();
+        updateTotals();
+      }
+
+      // Fungsi menghapus data baris terakhir
+      function hapusBarisTerakhir() {
+        if (dataKeuangan.length > 0) {
+          const lastTransaction = dataKeuangan.pop();
+          totalPemasukan -= lastTransaction.pemasukan;
+          totalPengeluaran -= lastTransaction.pengeluaran;
+          renderDataKeuangan();
+          updateTotals();
+        } else {
+          alert("Tidak ada transaksi untuk dihapus.");
+        }
+      }
+
+      // Fungsi simpan PDF
+      function simpanPDF() {
+        const doc = new jsPDF();
+        doc.text("Laporan Keuangan Harian", 14, 16);
+        doc.text(`Pemasukan: Rp ${totalPemasukan}`, 14, 30);
+        doc.text(`Pengeluaran: Rp ${totalPengeluaran}`, 14, 40);
+        doc.text(`Saldo Akhir: Rp ${totalPemasukan - totalPengeluaran}`, 14, 50);
+
+        let y = 70;
+        dataKeuangan.forEach((data) => {
+          doc.text(`${data.tanggal} - ${data.keterangan} - Pemasukan: Rp ${data.pemasukan} - Pengeluaran: Rp ${data.pengeluaran} - Saldo: Rp ${data.saldo}`, 14, y);
+          y += 10;
+        });
+
+        doc.save("laporan_keuangan_harian.pdf");
+      }
+
+      // Lampirkan fungsi ke tombol
+      document.querySelector(".btn-success").onclick = tambahTransaksi;
+      document.querySelector(".btn-danger").onclick = hapusSemuaTransaksi;
+      document.querySelector(".btn-warning").onclick = hapusBarisTerakhir;
+      document.querySelector(".btn-primary").onclick = simpanPDF;
+
+      // Fungsi simpan PDF
+      function simpanPDF() {
+        const { jsPDF } = window.jspdf; // Mengambil jsPDF dari window
+        const doc = new jsPDF(); // Membuat instance baru dari jsPDF
+
+        // Menambahkan judul
+        doc.setFontSize(18);
+        doc.text("Laporan Keuangan Harian", 14, 16);
+
+        // Menambahkan total pemasukan, pengeluaran, dan saldo
+        doc.setFontSize(12);
+        doc.text(`Pemasukan: Rp ${totalPemasukan}`, 14, 30);
+        doc.text(`Pengeluaran: Rp ${totalPengeluaran}`, 14, 40);
+        doc.text(`Saldo Akhir: Rp ${totalPemasukan - totalPengeluaran}`, 14, 50);
+
+        // Menambahkan data transaksi
+        let y = 70; // Posisi Y untuk menulis data transaksi
+        dataKeuangan.forEach((data) => {
+          doc.text(`${data.tanggal} - ${data.keterangan} - Pemasukan: Rp ${data.pemasukan} - Pengeluaran: Rp ${data.pengeluaran} - Saldo: Rp ${data.saldo}`, 14, y);
+          y += 10; // Menambah jarak antar baris
+        });
+
+        // Menyimpan PDF dengan nama file
+        doc.save("laporan_keuangan_harian.pdf");
       }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
