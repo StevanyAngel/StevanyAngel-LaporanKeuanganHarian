@@ -22,6 +22,7 @@ Koneksi internet untuk mengakses CDN Bootstrap dan jsPDF.
 
 1. Buka link berikut untuk menuju halaman web : https://stevanyangel.github.io/StevanyAngel-LaporanKeuanganHarian/
 2. Isi data keuangan laporan harian berdasarkan kriteria
+   ![alt text](https://github.com/StevanyAngel/StevanyAngel-LaporanKeuanganHarian/blob/main/image/1.png?raw=true)
 
 ## Fitur Utama
 
