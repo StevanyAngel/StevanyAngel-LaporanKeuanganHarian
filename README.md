@@ -63,16 +63,18 @@ Mengimplementasikan fitur untuk menyimpan laporan dalam PDF dengan jsPDF.
 
 ## Cara Menggunakan
 
-Input Data Transaksi:
-Pilih tanggal.
-Masukkan keterangan transaksi.
-Pilih tipe transaksi (Pemasukan/Pengeluaran).
-Masukkan jumlah uang dan klik "Tambah Transaksi".
+### Input Data Transaksi:
 
-Mengelola Data:
-Klik "Hapus Semua Data" untuk menghapus semua transaksi.
-Klik "Hapus Baris Terakhir" untuk menghapus transaksi terakhir.
-Klik "Simpan PDF" untuk mendownload laporan sebagai PDF.
+1. Pilih tanggal.
+2. Masukkan keterangan transaksi.
+3. Pilih tipe transaksi (Pemasukan/Pengeluaran).
+4. Masukkan jumlah uang dan klik "Tambah Transaksi".
+
+### Mengelola Data:
+
+1. Klik "Hapus Semua Data" untuk menghapus semua transaksi.
+2. Klik "Hapus Baris Terakhir" untuk menghapus transaksi terakhir.
+3. Klik "Simpan PDF" untuk mendownload laporan sebagai PDF.
 
 ## Kontribusi
 
