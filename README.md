@@ -6,6 +6,15 @@ Aplikasi ini adalah sebuah sistem untuk mengelola laporan keuangan harian. Pengg
 
 ## Prerequisites
 
+1. Browser modern yang mendukung HTML5 dan JavaScript.
+2. Koneksi internet untuk mengakses CDN Bootstrap dan jsPDF.
+
+## Deskripsi
+
+Aplikasi ini adalah sebuah sistem untuk mengelola laporan keuangan harian. Pengguna dapat menambah, menghapus transaksi, serta menyimpan laporan dalam format PDF.
+
+## Prerequisites
+
 Browser modern yang mendukung HTML5 dan JavaScript.
 Koneksi internet untuk mengakses CDN Bootstrap dan jsPDF.
 
