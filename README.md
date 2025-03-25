@@ -22,17 +22,29 @@ Koneksi internet untuk mengakses CDN Bootstrap dan jsPDF.
 
 1. Buka link berikut untuk menuju halaman web : https://stevanyangel.github.io/StevanyAngel-LaporanKeuanganHarian/
 2. Isi data keuangan laporan harian berdasarkan kriteria :
+
    ![alt text](https://github.com/StevanyAngel/StevanyAngel-LaporanKeuanganHarian/blob/main/image/1.png?raw=true)
+
 3. Setelah mengisi data, anda dapat memilih beberapa pilihan :
+
    ![alt text](https://github.com/StevanyAngel/StevanyAngel-LaporanKeuanganHarian/blob/main/image/2.png?raw=true)
+
 4. Jika Tambah Transaksi :
+
    ![alt text](https://github.com/StevanyAngel/StevanyAngel-LaporanKeuanganHarian/blob/main/image/3.png?raw=true)
+
 5. Jika Simpan PDF :
+
    ![alt text](https://github.com/StevanyAngel/StevanyAngel-LaporanKeuanganHarian/blob/main/image/4.png?raw=true)
+
    ![alt text](https://github.com/StevanyAngel/StevanyAngel-LaporanKeuanganHarian/blob/main/image/5.png?raw=true)
+
 6. Jika Hapus Baris Terakhir :
+
    ![alt text](https://github.com/StevanyAngel/StevanyAngel-LaporanKeuanganHarian/blob/main/image/6.png?raw=true)
+
 7. Jika Hapus Semua Data :
+
    ![alt text](https://github.com/StevanyAngel/StevanyAngel-LaporanKeuanganHarian/blob/main/image/7.png?raw=true)
 
 ## Fitur Utama
