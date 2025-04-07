@@ -9,10 +9,6 @@ Aplikasi ini adalah sebuah sistem untuk mengelola laporan keuangan harian. Pengg
 1. Browser modern yang mendukung HTML5 dan JavaScript.
 2. Koneksi internet untuk mengakses CDN Bootstrap dan jsPDF.
 
-## Deskripsi
-
-Aplikasi ini adalah sebuah sistem untuk mengelola laporan keuangan harian. Pengguna dapat menambah, menghapus transaksi, serta menyimpan laporan dalam format PDF.
-
 ## Instalasi
 
 1. Buka link berikut untuk menuju halaman web : https://stevanyangel.github.io/StevanyAngel-LaporanKeuanganHarian/
